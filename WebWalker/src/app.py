@@ -19,21 +19,21 @@ if 'DASHSCOPE_API_KEY' not in os.environ and 'OPENAI_API_KEY' not in os.environ:
 if 'DASHSCOPE_API_KEY' in os.environ:
     model = "qwen-plus"
     llm_cfg = {
-        'model': model,
+        'model': os.getenv('DASHSCOPE_MODEL',model),
         'api_key': os.getenv('DASHSCOPE_API_KEY'),
-        'model_server': "https://dashscope.aliyuncs.com/compatible-mode/v1" ,
+        'model_server':  os.getenv('DASHSCOPE_BASE_URL','https://dashscope.aliyuncs.com/compatible-mode/v1') ,
         'generate_cfg': {
                 'top_p': 0.8,
                 'max_input_tokens': 120000,
                 'max_retries': 20
         },
     }
-if 'OPENAI_API_KEY' in os.environ and 'OPENAI_MODEL_SERVER' in os.environ:
+if 'OPENAI_API_KEY' in os.environ and 'OPENAI_BASE_URL' in os.environ:
     model = "gpt-4o"
     llm_cfg = {
-        'model': model,
+        'model': os.getenv('OPENAI_MODEL',model),
         'api_key': os.getenv('OPENAI_API_KEY'),
-        'model_server': os.getenv('OPENAI_MODEL_SERVER'),
+        'model_server': os.getenv('OPENAI_BASE_URL'),
         'generate_cfg': {
                 'top_p': 0.8,
                 'max_input_tokens': 120000,

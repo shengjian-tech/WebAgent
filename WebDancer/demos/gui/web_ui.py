@@ -47,7 +47,7 @@ class WebUI:
         }
 
         self.agent_config_list = [{
-            'name': agent.name,
+            'name': chatbot_config.get('agent.name', agent.name),
             'avatar': chatbot_config.get(
                 'agent.avatar',
                 get_avatar_image(agent.name),

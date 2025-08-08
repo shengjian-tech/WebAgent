@@ -8,7 +8,6 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 
 MAX_MULTIQUERY_NUM = os.getenv("MAX_MULTIQUERY_NUM", 3)
 JINA_API_KEY = os.getenv("JINA_API_KEY")
-DASHSCOPE_KEY = os.getenv('DASHSCOPE_API_KEY')
 
 extractor_prompt = """Please process the following webpage content and user goal to extract relevant information:
 
@@ -52,7 +51,7 @@ def jina_readpage(url: str) -> str:
     for attempt in range(max_retries):
         try:
             response = requests.get(
-                f"https://r.jina.ai/{url}",
+                f"{os.getenv("JINA_API_URL")}{url}",
                 headers=headers,
                 timeout=timeout
             )
@@ -116,11 +115,11 @@ class Visit(BaseTool):
     
 
     def llm(self, messages):
-        client = OpenAI(api_key=DASHSCOPE_KEY, base_url="https://dashscope.aliyuncs.com/compatible-mode/v1")
+        client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'), base_url= os.getenv('OPENAI_BASE_URL'))
         max_retries = 10
         for attempt in range(max_retries):
             response = client.chat.completions.create(
-                model="qwen2.5-72b-instruct", 
+                model= os.getenv('OPENAI_MODEL'), 
                 messages=messages,
                 response_format={"type": "json_object"},
             )

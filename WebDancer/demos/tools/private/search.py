@@ -43,7 +43,7 @@ class Search(BaseTool):
         return response
 
     def google_search(self, query: str) -> str:
-        url = 'https://google.serper.dev/search'
+        url = os.getenv("SEARCH_API_URL")
         headers = {
             'X-API-KEY': GOOGLE_SEARCH_KEY,
             'Content-Type': 'application/json',

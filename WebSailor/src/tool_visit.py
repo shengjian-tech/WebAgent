@@ -12,7 +12,7 @@ import random
 WEBCONTENT_MAXLENGTH = int(os.getenv("WEBCONTENT_MAXLENGTH", 150000))
 IGNORE_JINA = os.getenv("IGNORE_JINA", "false").lower() == "true"
 # Visit Tool (Using Jina Reader)
-JINA_READER_URL_PREFIX = "https://r.jina.ai/"
+JINA_READER_URL_PREFIX = os.getenv("JINA_API_URL")
 
 JINA_API_KEY = os.getenv("JINA_API_KEY")
 
@@ -119,7 +119,7 @@ class Visit(BaseTool):
         for attempt in range(max_retries):
             try:
                 response = requests.get(
-                    f"https://r.jina.ai/{url}",
+                    f"{os.getenv("JINA_API_URL")}{url}",
                     headers=headers,
                     timeout=timeout
                 )

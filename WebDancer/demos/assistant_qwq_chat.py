@@ -10,26 +10,26 @@ from demos.llm.oai import TextChatAtOAI
 from demos.llm.qwen_dashscope import QwenChatAtDS
 from demos.gui.web_ui import WebUI
 from demos.utils.date import date2str, get_date_now
-from demos.tools import Visit, Search
+from demos.tools import Visit, Search, Weather,knowledgeBase
 
 
 ROOT_RESOURCE = os.path.join(os.path.dirname(__file__), 'resource')
 
 
 
-def init_dev_search_agent_service(name: str = 'SEARCH', port: int = 8002, desc: str = '初版', reasoning: bool = True, max_llm_calls: int = 20, tools = ['search', 'visit'], addtional_agent = None):
+def init_dev_search_agent_service(model: str="WebDancer-QwQ-32B", base_url: str = "http://127.0.0.1:8004/v1", api_key:str='EMPTY',desc: str = '初版', reasoning: bool = True, max_llm_calls: int = 20, tools = ['search', 'visit', 'weatcher', 'knowledgeBase'], addtional_agent = None):
     llm_cfg = TextChatAtOAI({
-        'model': '',
+        'model': model,
         'model_type': 'oai',
-        'model_server': f'http://127.0.0.1:{port}/v1',
-        'api_key': 'EMPTY',
+        'model_server': base_url,
+        'api_key': api_key,
         'generate_cfg': {
             'fncall_prompt_type': 'nous',
             'temperature': 0.6,
             'top_p': 0.95,
             'top_k': -1,
             'repetition_penalty': 1.1,
-            'max_tokens': 32768,
+            'max_tokens': 32768, ### 模型默认最大的长度一般是8192,设置模型的最大长度 --max-model-len=40960 (模型config.json的 max_position_embeddings)
             'stream_options': {
                 'include_usage': True,
             },
@@ -50,8 +50,8 @@ def init_dev_search_agent_service(name: str = 'SEARCH', port: int = 8002, desc: 
         llm=llm_cfg,
         function_list=tools,
         system_message="",
-        name=f'WebDancer',
-        description=f"I am WebDancer, a web information seeking agent, welcome to try!",
+        name=f'GITMOSS',
+        description=f"I see GITMOSS, I see no bounds, I see nothing! Dialogue with great minds. Deep ideas are worth walking with",
         extra={
             'reasoning': reasoning,
             'max_llm_calls': max_llm_calls,
@@ -88,12 +88,13 @@ User: '''
 
 def app_gui():
     agents = []
-    for name, port, desc, reasoning, max_llm_calls, tools in [
-        ('WebDancer-QwQ-32B', 8004, '...', True, 50, ['search', 'visit']),
+    for model, base_url, api_key,desc, reasoning, max_llm_calls, tools in [
+        (os.getenv('WEbDANCER_MODEL'), os.getenv('WEbDANCER_BASE_URL'),os.getenv('WEbDANCER_API_KEY'), '...', True, 50, ['search','weather', 'visit', "knowledgeBase"]),
     ]:
         search_bot_dev = init_dev_search_agent_service(
-            name=name,
-            port=port,
+            model=model,
+            base_url=base_url,
+            api_key=api_key,
             desc=desc,
             reasoning=reasoning,
             max_llm_calls=max_llm_calls,
@@ -120,6 +121,9 @@ def app_gui():
             'AI生成内容（如AI绘画）对传统艺术价值的重构'
         ],
         'user.name': 'User',
+        'user.avatar':'https://shengjian.net/public/upload/logo.png',
+        'agent.name': 'GITMOSS',
+        'agent.avatar':'https://shengjian.net/public/upload/logo.png',
         'verbose': True
     }
     messages = {'role': 'user', 'content': '介绍下你自己'}
@@ -129,7 +133,7 @@ def app_gui():
     ).run(
         message=messages,
         share=False,
-        server_name='127.0.0.1',
+        server_name='0.0.0.0', ## 放开IP访问限制
         server_port=7860,
         concurrency_limit=20,
         enable_mention=False,

@@ -10,14 +10,14 @@ from demos.llm.oai import TextChatAtOAI
 from demos.llm.qwen_dashscope import QwenChatAtDS
 from demos.gui.web_ui import WebUI
 from demos.utils.date import date2str, get_date_now
-from demos.tools import Visit, Search, Weather,knowledgeBase
+from demos.tools import Visit, Search,knowledgeBase
 
 
 ROOT_RESOURCE = os.path.join(os.path.dirname(__file__), 'resource')
 
 
 
-def init_dev_search_agent_service(model: str="WebDancer-QwQ-32B", base_url: str = "http://127.0.0.1:8004/v1", api_key:str='EMPTY',desc: str = '初版', reasoning: bool = True, max_llm_calls: int = 20, tools = ['search', 'visit', 'weatcher', 'knowledgeBase'], addtional_agent = None):
+def init_dev_search_agent_service(model: str="WebDancer-QwQ-32B", base_url: str = "http://127.0.0.1:8004/v1", api_key:str='EMPTY',desc: str = '初版', reasoning: bool = True, max_llm_calls: int = 20, tools = ['search', 'visit', 'knowledgeBase'], addtional_agent = None):
     llm_cfg = TextChatAtOAI({
         'model': model,
         'model_type': 'oai',
@@ -89,7 +89,7 @@ User: '''
 def app_gui():
     agents = []
     for model, base_url, api_key,desc, reasoning, max_llm_calls, tools in [
-        (os.getenv('WEbDANCER_MODEL'), os.getenv('WEbDANCER_BASE_URL'),os.getenv('WEbDANCER_API_KEY'), '...', True, 50, ['search','weather', 'visit', "knowledgeBase"]),
+        (os.getenv('WEbDANCER_MODEL'), os.getenv('WEbDANCER_BASE_URL'),os.getenv('WEbDANCER_API_KEY'), '...', True, 50, ['search', 'visit', "knowledgeBase"]),
     ]:
         search_bot_dev = init_dev_search_agent_service(
             model=model,

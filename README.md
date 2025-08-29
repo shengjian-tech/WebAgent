@@ -9,17 +9,8 @@ alt="Alibaba-NLP%2FWebAgent | Trendshift" style="width: 250px; height: 55px;" wi
 </p>
 
 <p align="center">
-🤗 <a href="https://huggingface.co/datasets/Alibaba-NLP/WebShaper" target="_blank">WebShaperQA</a> ｜
-<img src="./assets/tongyi.png" width="14px" style="display:inline;"> <a href="https://modelscope.cn/datasets/iic/WebShaper" target="_blank">WebShaperQA</a> ｜
-🤗 <a href="https://huggingface.co/Alibaba-NLP/WebSailor-3B" target="_blank">WebSailor-3B</a> ｜
-<img src="./assets/tongyi.png" width="14px" style="display:inline;"> <a href="https://modelscope.cn/models/iic/WebSailor-3B" target="_blank">ModelScope WebSailor-3B</a> |
-</p>
-
-<p align="center">
-🤗 <a href="https://huggingface.co/Alibaba-NLP/WebDancer-32B" target="_blank">WebDancer-QwQ-32B</a>  | 
-<img src="./assets/tongyi.png" width="14px" style="display:inline;"> <a href="https://modelscope.cn/models/iic/WebDancer-32B" target="_blank">ModelScope WebDancer-QwQ-32B</a> |
-🤗 <a href="https://huggingface.co/datasets/callanwu/WebWalkerQA" target="_blank">WebWalkerQA</a>
-
+🤗 <a href="https://huggingface.co/collections/Alibaba-NLP/webagent-6878a9947443234bc6cbf9f4" target="_blank">HuggingFace WebAgent</a> ｜
+<img src="./assets/tongyi.png" width="14px" style="display:inline;"> <a href="https://modelscope.cn/collections/WebAgent-3f21405837f646" target="_blank">ModelScope WebAgent</a> ｜
 </p>
 
 <div align="center">
@@ -28,10 +19,11 @@ alt="Alibaba-NLP%2FWebAgent | Trendshift" style="width: 250px; height: 55px;" wi
 </p>
 </div>
 
-> You can check the paper of [WebDancer](https://arxiv.org/pdf/2505.22648) and [WebWalker](https://arxiv.org/pdf/2501.07572) and [WebSailor](https://arxiv.org/pdf/2507.02592) and [WebShaper](https://arxiv.org/pdf/2507.15061).
+> You can check the paper of [WebDancer](https://arxiv.org/pdf/2505.22648) and [WebWalker](https://arxiv.org/pdf/2501.07572) and [WebSailor](https://arxiv.org/pdf/2507.02592) and [WebShaper](https://arxiv.org/pdf/2507.15061) and [WebWatcher](https://arxiv.org/pdf/2508.05748).
 
 > 💥 💥 💥 Stay tuned for more updates! We are working on building native agentic model based on the Browser and more open-domain environments!
 
+- [**WebWatcher**](WebWatcher) (Preprint 2025) - WebWatcher: Breaking New Frontier of Vision-Language Deep Research Agent
 - [**WebShaper**](WebShaper) (Preprint 2025) - WebShaper: Agentically Data Synthesizing via Information-Seeking
   Formalization
 - [**WebSailor**](WebSailor) (Preprint 2025) - WebSailor: Navigating Super-human Reasoning for Web Agent
@@ -40,8 +32,9 @@ alt="Alibaba-NLP%2FWebAgent | Trendshift" style="width: 250px; height: 55px;" wi
 
 ## 📰 News and Updates
 
-- `2025.08.07` 🔮🔮🔮**WebWatcher** is coming...
-- `2025.08.06` 🔥🔥🔥**WebSailor-7B** is [released](https://huggingface.co/Alibaba-NLP/WebSailor-7B).
+- `2025.08.28` 🔥🔥🔥[**WebShaper-32B**](https://huggingface.co/Alibaba-NLP/WebShaper-32B) is released.
+- `2025.08.26` 🔥🔥🔥[**WebSailor-32B**](https://huggingface.co/Alibaba-NLP/WebSailor-32B) and [**WebSailor-7B**](https://huggingface.co/Alibaba-NLP/WebSailor-7B) is released.
+- `2025.08.07` 🔥🔥🔥We release **WebWatcher**: Breaking New Frontier of Vision-Language Deep Research Agent.
 - `2025.07.22` 🔥🔥🔥We release **WebShaper**: Agentically Data Synthesizing via Information-Seeking Formalization.
 - `2025.07.11` 🔥🔥🔥**WebSailor-3B** is [released](https://huggingface.co/Alibaba-NLP/WebSailor-3B). You can deploy it with one click using <img src="./assets/aliyun.png" width="14px" style="display:inline;"> [Alibaba Cloud's FunctionAI](https://functionai.console.aliyun.com/template-detail?template=Alibaba-NLP-WebSailor-3B) in ten minutes!
 - `2025.07.03` 🔥🔥🔥We release **WebSailor**, an agentic search model specialized in performing extremely complex information seeking tasks, achieving open-source SOTA on some of the most difficult browsing benchmarks. **WebSailor** topped the HuggingFace [daily papers](https://huggingface.co/papers/2507.02592).
@@ -49,6 +42,18 @@ alt="Alibaba-NLP%2FWebAgent | Trendshift" style="width: 250px; height: 55px;" wi
 - `2025.05.29` 🔥🔥🔥We release **WebDancer**, a native agentic search model towards autonomous information seeking agency and _Deep Research_-like model.
 - `2025.05.15` **WebWalker** is accepted by ACL 2025 main conference.
 - `2025.01.14` We release **WebWalker**, a benchmark for LLMs in web traversal and a multi-agent framework for information seeking.
+
+| Model | Release Date | Max Length | Tool List |
+|:-------:|:--------------:|:------------:|:-----------:|
+| [WebDancer-32B](https://huggingface.co/Alibaba-NLP/WebDancer-32B) | 2025.06.23 | 32K | Search / Visit |
+| [WebSailor-3B](https://huggingface.co/Alibaba-NLP/WebSailor-3B) | 2025.07.11 | 32K | Search / Visit |
+| [WebSailor-7B](https://huggingface.co/Alibaba-NLP/WebSailor-7B) | 2025.08.06 | 32K | Search / Visit |
+| [WebSailor-32B](https://huggingface.co/Alibaba-NLP/WebSailor-32B) | 2025.08.26 | 32K | Search / Visit |
+| [WebSailor-32B](https://huggingface.co/Alibaba-NLP/WebSailor-32B) | 2025.08.26 | 32K | Search / Visit |
+| [WebWatcher-7B](https://huggingface.co/Alibaba-NLP/WebWatcher-7B) | 2025.08.27 | 32K | Search / Visit / ImageSearch / CodeInterpreter |
+| [WebWatcher-32B](https://huggingface.co/Alibaba-NLP/WebWatcher-32B) | 2025.08.27 | 32K | Search / Visit / ImageSearch / CodeInterpreter |
+| [WebShaper-32B](https://huggingface.co/Alibaba-NLP/WebShaper-32B) | 2025.08.28 | 32K | Search / Visit |
+
 
 ## 💎 Results Showcase
 
@@ -122,6 +127,15 @@ cd scripts
 bash run_demo.sh
 ```
 
+## 🎥 WebWatcher Demos
+
+We present a demo of WebWatcher, illustrating its ability to leverage multiple tools effectively to tackle highly challenging VQA problems.
+
+<div align="center">
+    <h3>WebWatcher</h3>
+    <video src= "https://github.com/user-attachments/assets/5b0e0299-3bff-481c-bd87-1bafd142673c"/>
+</div>
+
 ## 🎥 WebSailor Demos
 
 We provide demos for BrowseComp-en, BrowseComp-zh and Daily Use. Our model can complete highly difficult and uncertain tasks requiring massive information acquisition and complex reasoning.
@@ -170,41 +184,39 @@ The content of this project itself is licensed under [LICENSE](LICENSE).
 If this work is helpful, please kindly cite as:
 
 ```bigquery
-@misc{tao2025webshaper,
-      title={WebShaper: Agentically Data Synthesizing via Information-Seeking Formalization},
-      author={Zhengwei Tao and Jialong Wu and Wenbiao Yin and Junkai Zhang and Baixuan Li and Haiyang Shen and Kuan Li and Liwen Zhang and Xinyu Wang and Yong Jiang and Pengjun Xie and Fei Huang and Jingren Zhou},
-      year={2025},
-      eprint={2507.15061},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      url={https://arxiv.org/abs/2507.15061},
+@article{geng2025webwatcher,
+  title={WebWatcher: Breaking New Frontiers of Vision-Language Deep Research Agent},
+  author={Geng, Xinyu and Xia, Peng and Zhang, Zhen and Wang, Xinyu and Wang, Qiuchen and Ding, Ruixue and Wang, Chenxi and Wu, Jialong and Zhao, Yida and Li, Kuan and others},
+  journal={arXiv preprint arXiv:2508.05748},
+  year={2025}
 }
-@misc{li2025websailor,
-      title={WebSailor: Navigating Super-human Reasoning for Web Agent},
-      author={Kuan Li and Zhongwang Zhang and Huifeng Yin and Liwen Zhang and Litu Ou and Jialong Wu and Wenbiao Yin and Baixuan Li and Zhengwei Tao and Xinyu Wang and Weizhou Shen and Junkai Zhang and Dingchu Zhang and Xixi Wu and Yong Jiang and Ming Yan and Pengjun Xie and Fei Huang and Jingren Zhou},
-      year={2025},
-      eprint={2507.02592},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      url={https://arxiv.org/abs/2507.02592},
+
+@article{tao2025webshaper,
+  title={WebShaper: Agentically Data Synthesizing via Information-Seeking Formalization},
+  author={Zhengwei Tao and Jialong Wu and Wenbiao Yin and Junkai Zhang and Baixuan Li and Haiyang Shen and Kuan Li and Liwen Zhang and Xinyu Wang and Yong Jiang and Pengjun Xie and Fei Huang and Jingren Zhou},
+  journal={arXiv preprint arXiv:2507.15061},
+  year={2025}
 }
-@misc{wu2025webdancer,
-      title={WebDancer: Towards Autonomous Information Seeking Agency},
-      author={Jialong Wu and Baixuan Li and Runnan Fang and Wenbiao Yin and Liwen Zhang and Zhengwei Tao and Dingchu Zhang and Zekun Xi and Yong Jiang and Pengjun Xie and Fei Huang and Jingren Zhou},
-      year={2025},
-      eprint={2505.22648},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      url={https://arxiv.org/abs/2505.22648},
+
+@article{li2025websailor,
+  title={WebSailor: Navigating Super-human Reasoning for Web Agent},
+  author={Kuan Li and Zhongwang Zhang and Huifeng Yin and Liwen Zhang and Litu Ou and Jialong Wu and Wenbiao Yin and Baixuan Li and Zhengwei Tao and Xinyu Wang and Weizhou Shen and Junkai Zhang and Dingchu Zhang and Xixi Wu and Yong Jiang and Ming Yan and Pengjun Xie and Fei Huang and Jingren Zhou},
+  journal={arXiv preprint arXiv:2507.02592},
+  year={2025}
 }
-@misc{wu2025webwalker,
-      title={WebWalker: Benchmarking LLMs in Web Traversal},
-      author={Jialong Wu and Wenbiao Yin and Yong Jiang and Zhenglin Wang and Zekun Xi and Runnan Fang and Deyu Zhou and Pengjun Xie and Fei Huang},
-      year={2025},
-      eprint={2501.07572},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      url={https://arxiv.org/abs/2501.07572},
+
+@article{wu2025webdancer,
+  title={WebDancer: Towards Autonomous Information Seeking Agency},
+  author={Jialong Wu and Baixuan Li and Runnan Fang and Wenbiao Yin and Liwen Zhang and Zhengwei Tao and Dingchu Zhang and Zekun Xi and Yong Jiang and Pengjun Xie and Fei Huang and Jingren Zhou},
+  journal={arXiv preprint arXiv:2505.22648},
+  year={2025}
+}
+
+@article{wu2025webwalker,
+  title={WebWalker: Benchmarking LLMs in Web Traversal},
+  author={Jialong Wu and Wenbiao Yin and Yong Jiang and Zhenglin Wang and Zekun Xi and Runnan Fang and Deyu Zhou and Pengjun Xie and Fei Huang},
+  journal={arXiv preprint arXiv:2501.07572},
+  year={2025}
 }
 ```
 
